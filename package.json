@@ -19,14 +19,17 @@
     "clean": "rm -rf out",
     "test": "exit 0",
     "watch": "npm run build-only -- --lint-spec --watch",
-    "check-commit": "node scripts/check-commit"
+    "check-commit": "node scripts/check-commit",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "repository": "tc39/ecma262",
   "author": "ECMA TC39",
   "license": "SEE LICENSE IN https://tc39.es/ecma262/#sec-copyright-and-software-license",
   "homepage": "https://tc39.es/ecma262/",
   "dependencies": {
-    "ecmarkup": "^7.1.0"
+    "ecmarkup": "^7.1.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@alrra/travis-scripts": "^2.1.0",
@@ -34,5 +37,6 @@
     "jsdom": "^15.0.0",
     "tar-stream": "^2.2.0",
     "tiny-json-http": "^7.1.2"
-  }
+  },
+  "snyk": true
 }
